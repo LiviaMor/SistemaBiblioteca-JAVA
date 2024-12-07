@@ -6,16 +6,16 @@ public class Emprestimo {
 	private String matricula;
 	private String dataEmprestimo;
 	private String dataDevolucao;
-	private String dataDevolucaoEfetiva;
+	
 
 	public Emprestimo(int id_registroemprestimo, String codigo, String matricula, String dataEmprestimo,
-		String dataDevolucao, String dataDevolucaoEfetiva) {
+			String dataDevolucao) {
 		this.id_registroemprestimo = id_registroemprestimo;
 		this.codigo = codigo;
 		this.matricula = matricula;
 		this.dataEmprestimo = dataEmprestimo;
 		this.dataDevolucao = dataDevolucao;
-		this.dataDevolucaoEfetiva = dataDevolucaoEfetiva;
+		
 	}
 
 	public int getId_registroemprestimo() {
@@ -26,19 +26,19 @@ public class Emprestimo {
 		this.id_registroemprestimo = id_registroemprestimo;
 	}
 
-	public String getCodigo() {
+	public String getcodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(String codigo) {
+	public void setcodigo(String codigo) {
 		this.codigo = codigo;
 	}
 
-	public String getMatricula() {
+	public String getmatricula() {
 		return matricula;
 	}
 
-	public void setMatricula(String matricula) {
+	public void setmatricula(String matricula) {
 		this.matricula = matricula;
 	}
 
@@ -58,19 +58,12 @@ public class Emprestimo {
 		this.dataDevolucao = dataDevolucao;
 	}
 
-	public String getDataDevolucaoEfetiva() {
-		return dataDevolucaoEfetiva;
-	}
-
-	public void setDataDevolucaoEfetiva(String dataDevolucaoEfetiva) {
-		this.dataDevolucaoEfetiva = dataDevolucaoEfetiva;
-	}
+	
 
 	@Override
 	public String toString() {
-		return "Emprestimo [id_registroemprestimo=" + id_registroemprestimo + ", codigo=" + codigo
-				+ ", matricula=" + matricula + ", dataEmprestimo=" + dataEmprestimo + ", dataDevolucao="
-				+ dataDevolucao + ", dataDevolucaoEfetiva=" + dataDevolucaoEfetiva + "]";
+		return "Emprestimo [id_registroemprestimo=" + id_registroemprestimo + ", codigo=" + codigo + ", matricula="
+				+ matricula + ", dataEmprestimo=" + dataEmprestimo + ", dataDevolucao=" + dataDevolucao +"]";
 	}
 
 }
