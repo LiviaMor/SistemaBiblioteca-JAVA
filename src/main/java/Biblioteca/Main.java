@@ -23,7 +23,9 @@ public class Main {
 			System.out.println("4. Listar Livros");
 			System.out.println("5. Listar Usuários");
 			System.out.println("6. Listar Empréstimos");
-			System.out.println("9. Sair");
+			System.out.println("7. Deletar Usuário");
+			System.out.println("8. Deletar Livro");
+			System.out.println("0. Sair");
 			System.out.print("Escolha uma opção: ");
 			int opcao = scanner.nextInt();
 			scanner.nextLine(); // Consumir a nova linha
@@ -60,7 +62,7 @@ public class Main {
 				String dataEmprestimo = scanner.nextLine();
 				System.out.print("Digite a data de devolução (AAAA-MM-DD): ");
 				String dataDevolucao = scanner.nextLine();
-				Emprestimo emprestimo = new Emprestimo(0, codigoLivro, matricula, dataEmprestimo, dataDevolucao, null);
+				Emprestimo emprestimo = new Emprestimo(0, codigoLivro, matricula, dataEmprestimo, dataDevolucao);
 				emprestimoDAO.registrarEmprestimo(emprestimo);
 				break;
 			case 4:
@@ -84,7 +86,19 @@ public class Main {
 					System.out.println(e);
 				}
 				break;
-			case 9:
+			case 7:
+				System.out.print("Digite a matrícula do usuário a ser deletado: ");
+				int idUsuario = scanner.nextInt();
+				usuarioDAO.deletarUsuario(idUsuario);
+				System.out.println("Usuário deletado com sucesso!");
+				break;
+			case 8:
+				System.out.print("Digite o ID do livro a ser deletado: ");
+				int idLivro = scanner.nextInt();
+				livroDAO.deletarLivro(idLivro);
+				System.out.println("Livro deletado com sucesso!");
+				break;
+			case 0:
 				running = false;
 				System.out.println("Encerrando o sistema da Biblioteca Universitária...");
 				break;
